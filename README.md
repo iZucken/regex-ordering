@@ -28,17 +28,27 @@ Having a solution that works for most cases and in unsurprising way was enough.
 
 ## solution C
 
+Since the grammar for URL is limited, and the reasonable size of a URL is also limited, potentially a purely numerical solution could be derived (not enumeration).
+This way a fixed numeric rank could be assigned for all regular expressions.
+In could maybe solve the original problem more accurately in some cases.
+Maybe it could give more insight into a total solution.
+
+## solution D
+
 I hope I'll ever come around to testing an approach where I try to count power of infinities for the regular expressions and order them by that.
 Such solution will also probably not allow total ordering, but it will be able to more accurately solve the original task.
 I also have a feeling that it won't be total for the subset of a more global problem as well (only ordering expressions that match the same string, and thus have intersecting language).
 Some say that total ordering of regular languages cannot be defined, related to how languages can contain the other, partially intersect or not intersect at all.
 
-## solution D
+## solution E
 
 Something could probably be done by carefully analyzing the expressions and comparing their parts.
-The complexity of the problem explodes if we try to also measure this for more complicated regular languages, like PCRE, that allow for lookaheads etc.
 
 # observations
+
+## complexity
+
+The complexity of the problem explodes if we try to also measure this for more complicated regular languages, like PCRE, that allow for lookaheads. Backtracking is also complicated.
 
 ## sugar
 
@@ -46,7 +56,6 @@ Some regular expression features can be seen as sugar and therefore simplified t
 Something of this sort should already be happening inside a regex engine.
 For the purpose of only answering whether the expression matches the string, e.g. following kinds of equivalence could be made `^abc === ^abc.*`.
 They would not be applicable to regular expressions in more general sense.
-
 
 # materials
 

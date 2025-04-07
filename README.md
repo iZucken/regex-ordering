@@ -13,7 +13,7 @@ The issue arises when there is more than one matching pattern.
 
 ## solution A
 
-The possibly simplest solution imaginable could be attaching a global manual ordering property to the pait of pattern-rules.
+The possibly simplest solution imaginable could be attaching a global manual ordering property to the pair of pattern-rules.
 But that would in essence just put the burden of *total* ordering patterns on a person.
 Even with all included tools, like being able to quickly find what kinds of pages what patterns apply to, and what patterns were applied in what order to a page, it is too burdensome and inprecise.
 
@@ -45,6 +45,13 @@ Some say that total ordering of regular languages cannot be defined, related to 
 ## solution E
 
 Something could probably be done by carefully analyzing the expressions and comparing their parts. There is some research on related properties of regular languages and corresponding automatons.
+
+## solution F
+
+Another idea is to reduce languages to the DFA and see if it has cycles to determine finiteness. For finite languages we could compute a total number of strings, and for infite languages we could compare growth rates (asymptotic profiles). Growth rates alone wouldn't suffice, so a constant would also need to be extracted. At this point possibly the same flow could be used for finite languages if it is as performant. While such attributes seem hard to compute they are at least as well seemnigly decidable, and "absolute", so in worst case are trivially cacheable.
+
+- [Finding the growth rate of a regular language in polynomial time](https://arxiv.org/pdf/0711.4990)
+- [A characterization of poly-slender context-free languages](https://www.numdam.org/item/ITA_2000__34_1_77_0.pdf)
 
 # observations
 
